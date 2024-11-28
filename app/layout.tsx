@@ -4,6 +4,7 @@ import {ReactNode} from "react";
 import {getLocale, getMessages} from "next-intl/server";
 import {NextIntlClientProvider} from "next-intl";
 import AppStoreProvider from "@/app/_providers/AppStoreProvider";
+import AppQueryClientProvider from "@/app/_providers/AppQueryClientProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,9 +25,11 @@ export default async function RootLayout({
         <html lang={locale}>
         <NextIntlClientProvider messages={messages}>
             <AppStoreProvider>
-                <body>
-                {children}
-                </body>
+                <AppQueryClientProvider>
+                    <body>
+                        {children}
+                    </body>
+                </AppQueryClientProvider>
             </AppStoreProvider>
         </NextIntlClientProvider>
         </html>

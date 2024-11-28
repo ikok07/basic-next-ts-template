@@ -9,8 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-
+        
       },
+      screens: {
+        "xs": "380px"
+      }
     },
   },
   plugins: [],

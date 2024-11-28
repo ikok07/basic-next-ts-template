@@ -8,5 +8,5 @@ export default function Home() {
     <h1>{t("title")}</h1>
     <LanguageSelector/>
     <ClientComponent />
-  </div>;
+  </div>
 }
