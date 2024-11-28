@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {ReactNode} from "react";
+import {getLocale, getMessages} from "next-intl/server";
+import {NextIntlClientProvider} from "next-intl";
+import AppStoreProvider from "@/app/_providers/AppStoreProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,14 +14,21 @@ type LayoutProps = {
     children: ReactNode
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<LayoutProps>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+    const locale = await getLocale()
+    const messages = await getMessages();
+
+    return (
+        <html lang={locale}>
+        <NextIntlClientProvider messages={messages}>
+            <AppStoreProvider>
+                <body>
+                {children}
+                </body>
+            </AppStoreProvider>
+        </NextIntlClientProvider>
+        </html>
+    );
 }
