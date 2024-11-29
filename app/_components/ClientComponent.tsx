@@ -18,7 +18,6 @@ export default function ClientComponent() {
         dispatch(setName("John Smith"));
     }
 
-
     return <>
         <div className="flex items-center gap-4">
             <div className="flex gap-4 items-center">
