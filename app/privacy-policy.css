@@ -1,0 +1,37 @@
+.privacy-container {
+  max-width: 120rem;
+  margin: 2rem auto;
+  padding-inline: 1rem;
+}
+
+.privacy-h1 {
+  font-size: 2rem !important;
+  font-weight: bold !important;
+}
+
+.privacy-h2 {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.privacy-h3 {
+  font-size: 1.25rem !important;
+  font-weight: bold !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.privacy-h4 {
+  font-size: 1.15rem !important;
+  font-weight: bold !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.privacy-p {
+  font-size: 1rem !important;
+}
+
+.privacy-container li {
+  list-style-type: circle;
+  margin-left: 5rem;
+  margin-block: 1rem;
+}

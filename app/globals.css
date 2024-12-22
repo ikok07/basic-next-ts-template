@@ -11,6 +11,43 @@ html {
   scroll-behavior: smooth;
 }
 
+input {
+  &:focus {
+    outline: transparent;
+  }
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 1.3rem;
+  height: 1.20rem;
+  border: solid 2px #ff9f1170;
+  border-radius: 0.2rem;
+  appearance: none;
+  -webkit-appearance: none;
+  display: grid;
+  place-content: center;
+  transition: 200ms;
+
+  &:hover {
+    opacity: 0.65;
+  }
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.75rem;
+  height: 0.8rem;
+  transform: scale(0);
+  background: #ff9f11;
+  border-radius: 0.1rem;
+  transition: 200ms;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
 .flex-scroll {
   flex: 1 0 100%;
 }

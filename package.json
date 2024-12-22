@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@img-comparison-slider/react": "^8.0.2",
     "@nextui-org/react": "^2.6.8",
     "@reduxjs/toolkit": "^2.3.0",
     "@supabase/ssr": "^0.5.2",

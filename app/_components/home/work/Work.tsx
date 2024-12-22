@@ -2,7 +2,7 @@ import SectionHeading from "@/app/_components/ui/SectionHeading";
 import WorkRow from "@/app/_components/home/work/WorkRow";
 
 export default function Work() {
-    return <section id="work" className="mt-12">
+    return <section id="work" className="mt-12 w-[95%] max-w-[60rem] mx-auto">
         <SectionHeading label="КАК РАБОТИМ" title="Разкриваме процеса на изработка" />
         <div>
             <WorkRow

@@ -7,6 +7,7 @@ import AppStoreProvider from "@/app/_providers/AppStoreProvider";
 import AppQueryClientProvider from "@/app/_providers/AppQueryClientProvider";
 import Navbar from "@/app/_components/nav/Navbar";
 import UiProvider from "@/app/_providers/UIProvider";
+import Footer from "@/app/_components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Мебели ВаМ ЕООД",
@@ -30,8 +31,8 @@ export default async function RootLayout({
                 <AppQueryClientProvider>
                         <body>
                             <UiProvider>
-                                <Navbar/>
                                 {children}
+                                <Footer />
                             </UiProvider>
                         </body>
                 </AppQueryClientProvider>

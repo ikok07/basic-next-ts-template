@@ -5,18 +5,29 @@ export const SUPPORTED_LANGS: SupportedLanguage[] = ["en", "bg"];
 export const NAVLINKS: {label: string, href: string}[] = [
     {
         label: "Начало",
-        href: "#home"
+        href: "/#home"
     },
     {
         label: "Как работим",
-        href: "#work"
+        href: "/#work"
     },
     {
         label: "Визуализация срещу реалност",
-        href: "#visualize"
+        href: "/#visualise"
     },
     {
         label: "Оферти",
-        href: "#offers"
+        href: "/#offers"
     },
+]
+
+export const VISUALISE_COMPARISONS: {before: string, after: string}[] = [
+    {
+        before: "/visualise/visualise-1.png",
+        after: "/visualise/visualise-2.png",
+    },
+    {
+        before: "/visualise/visualise-1.png",
+        after: "/visualise/visualise-2.png",
+    }
 ]

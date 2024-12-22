@@ -5,18 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0543c0b9-fbd6-4b1e-8daa-822e84e782bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/_components/home/work/Work.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/_components/home/work/WorkRow.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/_components/ui/SectionHeading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/work/work-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/work/work-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/work/work-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/offers/ContactForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/offers/Offers.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/offers/OffersDown.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/offers/OffersUpper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/visualise/Visualise.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/visualise/VisualiseBeforeAfter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/home/visualise/VisualiseCarousel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/ui/PrimaryCheckbox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_components/ui/PrimaryInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/privacy-policy.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/privacy/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/offers/offers-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/visualise/visualise-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/visualise/visualise-2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_components/home/hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_components/home/hero/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_components/home/hero/HeroCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_components/home/hero/HeroCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_components/nav/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_components/nav/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_components/home/work/Work.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_components/home/work/Work.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +68,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/kok/WebstormProjects/mebelivam-v2/app/_components/ui",
+    "last_opened_file_path": "/Users/kok/WebstormProjects/mebelivam-v2/app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,10 +81,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/_components/ui" />
       <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/_components/ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/offers" />
+      <recent name="$PROJECT_DIR$/public/visualise" />
       <recent name="$PROJECT_DIR$/public/work" />
       <recent name="$PROJECT_DIR$/public/hero" />
       <recent name="$PROJECT_DIR$/public" />
@@ -94,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734857233942</updated>
-      <workItem from="1734857234968" duration="10386000" />
+      <workItem from="1734857234968" duration="14375000" />
     </task>
     <servers />
   </component>
