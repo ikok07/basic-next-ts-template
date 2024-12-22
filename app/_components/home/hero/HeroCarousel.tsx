@@ -12,7 +12,7 @@ export default function HeroCarousel() {
         if ((direction === "left" && offset + 100 > 0) || (direction === "right" && offset - 100 < -(imgCount - 1) * 100)) return;
         setOffset(v => direction === "left" ? v + 100 : v - 100);
     }
-    return <div className="absolute w-[100vw] h-max overflow-hidden">
+    return <div className="w-[100vw] h-max overflow-hidden">
         <div className="flex transition-all duration-200" style={{transform: `translateX(${offset}%`}}>
             <div className="flex-scroll relative w-[100vw] h-[80vh]">
                 <Image src="/hero/hero-1.png" alt="Мебели Вам" fill className="object-cover"/>

@@ -1,7 +1,6 @@
 import {NAVLINKS} from "@/app/config/config";
 import Link from "next/link";
 import Image from "next/image";
-import {IoMenuOutline} from "react-icons/io5";
 import MobileNavbar from "@/app/_components/nav/MobileNavbar";
 
 export default function Navbar() {

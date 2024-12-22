@@ -6,6 +6,11 @@
   margin: 0
 }
 
+html {
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
 .flex-scroll {
   flex: 1 0 100%;
 }
