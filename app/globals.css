@@ -5,3 +5,13 @@
 :root {
   margin: 0
 }
+
+.flex-scroll {
+  flex: 1 0 100%;
+}
+
+.mobile-nav-shadow {
+  -webkit-box-shadow: 10px 10px 33px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 10px 10px 33px 0px rgba(0,0,0,0.25);
+  box-shadow: 10px 10px 33px 0px rgba(0,0,0,0.25);
+}
