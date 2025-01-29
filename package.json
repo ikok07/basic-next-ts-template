@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@evyweb/ioctopus": "^1.2.0",
     "@reduxjs/toolkit": "^2.3.0",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.46.2",
     "axios": "^1.7.8",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.1",
     "install": "^0.13.0",
     "js-cookie": "^3.0.5",
     "next": "14.2.18",
     "next-intl": "^3.25.3",
     "npm": "^10.9.1",
+    "postgres": "^3.4.5",
     "react": "^18",
     "react-dom": "^18",
     "react-query": "^3.39.3",
@@ -29,10 +33,12 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "drizzle-kit": "^0.30.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.18",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }

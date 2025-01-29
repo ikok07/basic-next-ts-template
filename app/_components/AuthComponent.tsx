@@ -1,10 +1,10 @@
 "use client"
 
 import {useMutation} from "react-query";
-import {login, signUp} from "@/actions/auth";
-import {createClient} from "@/utils/supabase/client";
 import {useEffect, useState} from "react";
 import {User} from "@supabase/auth-js";
+import {createClient} from "@/app/_utils/supabase/supabase_client";
+import {signUp} from "@/app/actions";
 
 export default function AuthComponent() {
     const supabase = createClient();
@@ -13,14 +13,12 @@ export default function AuthComponent() {
         mutationFn: signUp.bind(null, {email: "petkovk796@gmail.com", password: "123Prudni@"})
     })
 
-    const {mutate: loginMethod, isLoading: isLoggingIn, error: loginError} = useMutation({
-        mutationFn: login.bind(null, {email: "petkovk796@gmail.com", password: "123Prudni@"})
-    })
+    // const {mutate: loginMethod, isLoading: isLoggingIn, error: loginError} = useMutation({
+    //     mutationFn: login.bind(null, {email: "petkovk796@gmail.com", password: "123Prudni@"})
+    // })
 
     function updateUserState() {
-        supabase.auth.getUser().then(res => {
-            setUser(res.data.user);
-        })
+
     }
 
     function handleSignUp() {
@@ -28,7 +26,7 @@ export default function AuthComponent() {
     }
 
     function handleLogIn() {
-        loginMethod();
+        // loginMethod();
     }
 
     function handleLogOut() {
@@ -39,7 +37,7 @@ export default function AuthComponent() {
     useEffect(updateUserState)
 
     return <div>
-        <h1>Supabase Auth: {isSigningUp || isLoggingIn ? "IS LOADING..." : ""}</h1>
+        <h1>Supabase Auth: {isSigningUp ? "IS LOADING..." : ""}</h1>
         <div className="flex items-center gap-4">
             <div className="flex gap-4 items-center">
                 <label>User ID:</label>
