@@ -31,7 +31,6 @@ export async function updateSession(request: NextRequest) {
     );
 
     const {data: {user}} = await supabase.auth.getUser();
-
     // Logic if there isn't user logged in
     // use request.nextUrl.pathname in order to check the url
     if (!user) {

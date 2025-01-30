@@ -5,6 +5,7 @@ import {getLocale, getMessages} from "next-intl/server";
 import {NextIntlClientProvider} from "next-intl";
 import AppStoreProvider from "@/app/_providers/AppStoreProvider";
 import AppQueryClientProvider from "@/app/_providers/AppQueryClientProvider";
+import {ToastContainer} from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,6 +29,7 @@ export default async function RootLayout({
                 <AppQueryClientProvider>
                     <body>
                         {children}
+                        <ToastContainer />
                     </body>
                 </AppQueryClientProvider>
             </AppStoreProvider>

@@ -1,4 +1,4 @@
-import {ISignUpUseCase} from "@/src/application/use-cases/signup.use-case";
+import {ISignUpUseCase} from "@/src/application/use-cases/auth/signup.use-case";
 import {z} from "zod";
 import {InputParseError} from "@/src/entities/errors/common";
 
