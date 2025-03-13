@@ -1,7 +1,7 @@
 "use client"
 
 import Cookies from "js-cookie"
-import {SUPPORTED_LANGS, SupportedLanguage} from "@/app/config/config";
+import {SUPPORTED_LANGS, SupportedLanguage} from "@/app/_config/config";
 import {useRouter} from "next/navigation";
 
 export default function LanguageSelector() {

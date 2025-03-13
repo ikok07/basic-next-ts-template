@@ -6,6 +6,8 @@ import {NextIntlClientProvider} from "next-intl";
 import AppStoreProvider from "@/app/_providers/AppStoreProvider";
 import AppQueryClientProvider from "@/app/_providers/AppQueryClientProvider";
 import {ToastContainer} from "react-toastify";
+import {ClerkProvider} from "@clerk/nextjs";
+import {bgBG, enUS} from "@clerk/localizations";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,17 +25,33 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale}>
-        <NextIntlClientProvider messages={messages}>
-            <AppStoreProvider>
-                <AppQueryClientProvider>
-                    <body>
+        <ClerkProvider
+            localization={locale === "bg" ? bgBG : enUS}
+            appearance={{
+                variables: {
+                    colorPrimary: "#825dff"
+                },
+                layout: {
+                    logoImageUrl: "/logo.png",
+                    privacyPageUrl: "/",
+                },
+                elements: {
+                    logoImage: "h-[3rem] mb-3"
+                }
+            }}
+        >
+            <html lang={locale}>
+            <NextIntlClientProvider messages={messages}>
+                <AppStoreProvider>
+                    <AppQueryClientProvider>
+                        <body>
                         {children}
                         <ToastContainer />
-                    </body>
-                </AppQueryClientProvider>
-            </AppStoreProvider>
-        </NextIntlClientProvider>
-        </html>
+                        </body>
+                    </AppQueryClientProvider>
+                </AppStoreProvider>
+            </NextIntlClientProvider>
+            </html>
+        </ClerkProvider>
     );
 }
