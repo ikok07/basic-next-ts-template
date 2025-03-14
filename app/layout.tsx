@@ -9,6 +9,8 @@ import {ToastContainer} from "react-toastify";
 import {ClerkProvider} from "@clerk/nextjs";
 import {bgBG, enUS} from "@clerk/localizations";
 import ThemeProvider from "@/app/_providers/ThemeProvider";
+import {dark} from "@clerk/themes";
+import ClerkAuthProvider from "@/app/_providers/ClerkAuthProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,40 +28,26 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <ClerkProvider
-            localization={locale === "bg" ? bgBG : enUS}
-            appearance={{
-                variables: {
-                    colorPrimary: "#825dff"
-                },
-                layout: {
-                    logoImageUrl: "/logo.png",
-                    privacyPageUrl: "/",
-                },
-                elements: {
-                    logoImage: "h-[3rem] mb-3"
-                }
-            }}
-        >
-            <html lang={locale} suppressHydrationWarning={true}>
-            <NextIntlClientProvider messages={messages}>
-                <AppStoreProvider>
-                    <AppQueryClientProvider>
-                        <body>
-                            <ThemeProvider
-                                attribute="class"
-                                defaultTheme="system"
-                                enableSystem={true}
-                                disableTransitionOnChange={true}
-                            >
+        <html lang={locale} suppressHydrationWarning={true}>
+        <NextIntlClientProvider messages={messages}>
+            <AppStoreProvider>
+                <AppQueryClientProvider>
+                    <body>
+                        <ThemeProvider
+                            attribute="class"
+                            defaultTheme="system"
+                            enableSystem={true}
+                            disableTransitionOnChange={true}
+                        >
+                            <ClerkAuthProvider locale={locale}>
                                 {children}
                                 <ToastContainer />
-                            </ThemeProvider>
-                        </body>
-                    </AppQueryClientProvider>
-                </AppStoreProvider>
-            </NextIntlClientProvider>
-            </html>
-        </ClerkProvider>
+                            </ClerkAuthProvider>
+                        </ThemeProvider>
+                    </body>
+                </AppQueryClientProvider>
+            </AppStoreProvider>
+        </NextIntlClientProvider>
+        </html>
     );
 }

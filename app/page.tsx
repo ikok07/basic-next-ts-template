@@ -8,10 +8,12 @@ export default async function Home() {
   const t = await getTranslations("Homepage");
 
   return <div className="p-4 space-y-3">
-    <ThemeSelector />
+    <div className="flex items-center gap-2">
+      <ThemeSelector />
+      <LanguageSelector />
+    </div>
     <div>
       <h1>{t("title")}</h1>
-      <LanguageSelector/>
     </div>
     <AuthComponent />
   </div>

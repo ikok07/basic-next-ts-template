@@ -1,12 +1,27 @@
 import {Button} from "@/app/_components/ui/shadcn/button";
 import {ComponentProps} from "react";
+import Link from "next/link";
+import {Loader2} from "lucide-react";
 
-type SecondaryButtonProps = {} & ComponentProps<"button">
+type SecondaryButtonProps = {
+    href?: string,
+    loading?: boolean
+} & ComponentProps<"button">
 
-export default function SecondaryButton({children, onClick, disabled, className, ...props}: SecondaryButtonProps) {
-    return <div>
-        <Button variant="outline" className={`${className} px-3`} onClick={disabled ? () => {} : onClick} {...props}>
-            {children}
-        </Button>
-    </div>
+export default function SecondaryButton({children, href, onClick, disabled, loading, className, ...props}: SecondaryButtonProps) {
+    const loadingBackground = "cursor-not-allowed opacity-50";
+
+    const button = <Button
+        variant="secondary"
+        className={`${className} ${loading ? loadingBackground : ""} h-max py-1.5 px-3`}
+        onClick={disabled || loading ? () => {} : onClick}
+        {...props}
+    >
+        {loading && <Loader2 className="animate-spin"/>}
+        {children}
+    </Button>
+
+    if (href) return <Link href={href}>{button}</Link>
+
+    return button;
 }
