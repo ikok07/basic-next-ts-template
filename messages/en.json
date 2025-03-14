@@ -1,4 +1,11 @@
 {
+  "Config": {
+    "Themes": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
   "Homepage": {
     "title": "Homepage"
   }

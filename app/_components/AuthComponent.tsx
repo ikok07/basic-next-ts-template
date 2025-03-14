@@ -5,6 +5,7 @@ import Link from "next/link";
 import {UserButton} from "@clerk/nextjs";
 import {useAccess} from "@/app/_hooks/auth/useAccess";
 import {IoGlobeOutline, IoLinkOutline} from "react-icons/io5";
+import PrimaryButton from "@/app/_components/ui/buttons/PrimaryButton";
 
 export default function AuthComponent() {
     const {authData, userObject} = useAppUser();
@@ -39,6 +40,7 @@ export default function AuthComponent() {
                             <UserButton.UserProfileLink url="/" label="Test link" labelIcon={<IoLinkOutline />} />
                         </UserButton>
                         {accessGranted && <p className="text-red-500">Only admins should see this text</p>}
+                        <PrimaryButton>Account</PrimaryButton>
                     </>
                 }
             </div>

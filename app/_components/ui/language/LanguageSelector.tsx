@@ -3,6 +3,7 @@
 import Cookies from "js-cookie"
 import {SUPPORTED_LANGS, SupportedLanguage} from "@/app/_config/config";
 import {useRouter} from "next/navigation";
+import SecondaryButton from "@/app/_components/ui/buttons/SecondaryButton";
 
 export default function LanguageSelector() {
     const router = useRouter();
@@ -13,7 +14,7 @@ export default function LanguageSelector() {
 
     return <div className="flex gap-4">
         {SUPPORTED_LANGS.map((lang, index) => {
-            return <button onClick={handleSelectLanguage.bind(null, lang)} key={index}>{lang}</button>
+            return <SecondaryButton onClick={handleSelectLanguage.bind(null, lang)} key={index}>{lang}</SecondaryButton>
         })}
     </div>
 }

@@ -8,6 +8,7 @@ import AppQueryClientProvider from "@/app/_providers/AppQueryClientProvider";
 import {ToastContainer} from "react-toastify";
 import {ClerkProvider} from "@clerk/nextjs";
 import {bgBG, enUS} from "@clerk/localizations";
+import ThemeProvider from "@/app/_providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -40,13 +41,20 @@ export default async function RootLayout({
                 }
             }}
         >
-            <html lang={locale}>
+            <html lang={locale} suppressHydrationWarning={true}>
             <NextIntlClientProvider messages={messages}>
                 <AppStoreProvider>
                     <AppQueryClientProvider>
                         <body>
-                        {children}
-                        <ToastContainer />
+                            <ThemeProvider
+                                attribute="class"
+                                defaultTheme="system"
+                                enableSystem={true}
+                                disableTransitionOnChange={true}
+                            >
+                                {children}
+                                <ToastContainer />
+                            </ThemeProvider>
                         </body>
                     </AppQueryClientProvider>
                 </AppStoreProvider>
