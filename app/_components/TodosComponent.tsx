@@ -11,13 +11,14 @@ import {
 } from "@/app/_components/ui/shadcn/alert-dialog";
 import useErrorMutation from "@/app/_hooks/useErrorMutation";
 import {createTodo, getTodos} from "@/app/actions";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import useErrorQuery from "@/app/_hooks/useErrorQuery";
 import {useQueryClient} from "react-query";
 import {Todo} from "@/drizzle/schema/todo";
 import {ServerActionResult} from "@/app/_utils/createServerAction";
 import {handleParse, trackErrors} from "@/app/_utils/handleInputValidation";
 import {z} from "zod";
+import {toast} from "sonner";
 
 export default function TodosComponent() {
     const queryClient = useQueryClient();
@@ -25,7 +26,7 @@ export default function TodosComponent() {
     const [content, setContent] = useState<string | null>(null);
     const [errors, setErrors] = useState<string[]>([]);
 
-    const {data: queryTodos, isLoading: isGettingTodos, error: getTodosError} = useErrorQuery({
+    const {data: queryTodos, isLoading: isGettingTodos} = useErrorQuery({
         queryFn: () => getTodos(),
         queryKey: ["todos"]
     })
@@ -47,6 +48,13 @@ export default function TodosComponent() {
             setContent(null);
         }
     })
+
+    useEffect(() => {
+        if (createTodoError) toast.error("Something went wrong", {
+            closeButton: true,
+            description: "Failed to create new todo!",
+        });
+    }, [createTodoError]);
 
     if (!authData.isSignedIn) return;
 

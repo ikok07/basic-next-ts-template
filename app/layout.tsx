@@ -5,12 +5,9 @@ import {getLocale, getMessages} from "next-intl/server";
 import {NextIntlClientProvider} from "next-intl";
 import AppStoreProvider from "@/app/_providers/AppStoreProvider";
 import AppQueryClientProvider from "@/app/_providers/AppQueryClientProvider";
-import {ToastContainer} from "react-toastify";
-import {ClerkProvider} from "@clerk/nextjs";
-import {bgBG, enUS} from "@clerk/localizations";
 import ThemeProvider from "@/app/_providers/ThemeProvider";
-import {dark} from "@clerk/themes";
 import ClerkAuthProvider from "@/app/_providers/ClerkAuthProvider";
+import { Toaster } from "@/app/_components/ui/shadcn/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -41,7 +38,9 @@ export default async function RootLayout({
                         >
                             <ClerkAuthProvider locale={locale}>
                                 {children}
-                                <ToastContainer />
+                                <Toaster
+                                    position="top-right"
+                                />
                             </ClerkAuthProvider>
                         </ThemeProvider>
                     </body>
