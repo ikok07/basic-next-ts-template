@@ -1,17 +1,16 @@
 import {IAuthenticationService} from "@/src/application/services/auth/authentication.service.interface";
-import {AuthenticationServiceOptions} from "@/src/entities/models/auth/authentication.service.options";
-import {User} from "@clerk/backend";
+import {User, AuthObject} from "@clerk/backend";
 import {auth, currentUser} from "@clerk/nextjs/server";
 import {AuthenticationError} from "@/src/entities/errors/auth/authentication";
 
 export class ClerkService implements IAuthenticationService {
-    async getUser(): Promise<User | null> {
+    async getUser(): Promise<{user: User | null, auth: AuthObject}> {
         try {
-            const {userId} = await auth();
-
-            if (!userId) return null;
-
-            return await currentUser();
+            const authObject = await auth();
+            return {
+                user: await currentUser(),
+                auth: authObject
+            };
         } catch(e) {
 
             throw new AuthenticationError(`Failed to get user! ${e}`);

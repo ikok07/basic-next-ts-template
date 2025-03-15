@@ -9,11 +9,11 @@ type SecondaryButtonProps = {
 } & ComponentProps<"button">
 
 export default function SecondaryButton({children, href, onClick, disabled, loading, className, ...props}: SecondaryButtonProps) {
-    const loadingBackground = "cursor-not-allowed opacity-50";
+    const inactiveBackground = "cursor-not-allowed opacity-50";
 
     const button = <Button
         variant="secondary"
-        className={`${className} ${loading ? loadingBackground : ""} h-max py-1.5 px-3`}
+        className={`${className} ${loading || disabled ? inactiveBackground : ""} h-max py-1.5 px-3`}
         onClick={disabled || loading ? () => {} : onClick}
         {...props}
     >
