@@ -2,6 +2,7 @@ import {Button} from "@/app/_components/ui/shadcn/button";
 import {ComponentProps} from "react";
 import Link from "next/link";
 import {Loader2} from "lucide-react";
+import {cn} from "@/app/_utils/cn";
 
 type SecondaryButtonProps = {
     href?: string,
@@ -9,11 +10,17 @@ type SecondaryButtonProps = {
 } & ComponentProps<"button">
 
 export default function SecondaryButton({children, href, onClick, disabled, loading, className, ...props}: SecondaryButtonProps) {
-    const inactiveBackground = "cursor-not-allowed opacity-50";
-
     const button = <Button
         variant="secondary"
-        className={`${className} ${loading || disabled ? inactiveBackground : ""} h-max py-1.5 px-3`}
+        className={
+            cn(
+                "h-max py-1.5 px-3",
+                className,
+                {
+                    "cursor-not-allowed opacity-50": loading || disabled
+                }
+            )
+        }
         onClick={disabled || loading ? () => {} : onClick}
         {...props}
     >

@@ -20,7 +20,6 @@ export const getTodos = createServerAction(async () => {
 })
 
 export const createTodo = createServerAction(async (todo: Partial<TodoInsert>) => {
-    throw new Error("TEST");
     const createTodoController = getInjection("ICreateTodoController");
     return await createTodoController(todo);
 })
